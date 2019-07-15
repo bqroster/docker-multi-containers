@@ -13,5 +13,8 @@ after_success:
   - docker build -t bqroster/docker-mc-nginx ./nginx
   - docker build -t bqroster/docker-mc-server ./server
   - docker build -t bqroster/docker-mc-worker ./worker
-  # Log in into Docker Hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"
+  - docker push bqroster/docker-multicontainer
+  - docker push bqroster/docker-mc-nginx
+  - docker push bqroster/docker-mc-server
+  - docker push bqroster/docker-mc-worker
