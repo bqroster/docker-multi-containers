@@ -13,7 +13,7 @@ after_success:
   - docker build -t bqroster/docker-mc-nginx ./nginx
   - docker build -t bqroster/docker-mc-server ./server
   - docker build -t bqroster/docker-mc-worker ./worker
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push bqroster/docker-multicontainer
   - docker push bqroster/docker-mc-nginx
   - docker push bqroster/docker-mc-server
