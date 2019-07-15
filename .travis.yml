@@ -15,7 +15,7 @@ after_success:
   - docker build -t bqroster/docker-mc-server ./server
   - docker build -t bqroster/docker-mc-worker ./worker
   # login to docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_EMAIL --password-stdin"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # take all these build images to docker hub
   - docker push bqroster/docker-multicontainer
   - docker push bqroster/docker-mc-nginx
